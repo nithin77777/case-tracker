@@ -10,4 +10,4 @@ git add .
 # Commit with the user-provided message
 git commit -m "$commit_message"
 
-echo "Changes committed successfully."
+echo "Script Ran Successfully."

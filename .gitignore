@@ -3,3 +3,4 @@ __pycache__
 .dockerignore
 docker-compose.yml
 Dockerfile
+scriptgit.zsh
