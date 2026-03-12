@@ -3,11 +3,12 @@ from typing import Optional
 from datetime import datetime
 
 class CaseSchema(BaseModel):
-    id: int
+    id: Optional[int] = None
     case_number: str
-    case_initiated_on: Optional[datetime]
-    case_updated: Optional[str]
-    completed_status: bool
+    case_initiated_on: Optional[datetime] = None
+    case_updated: Optional[datetime] = None
+    completed_status: bool = False
 
     class Config:
+        from_attributes = True
         orm_mode = True
