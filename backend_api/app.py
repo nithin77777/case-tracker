@@ -5,8 +5,8 @@ import dotenv
 import csv
 
 
-import models
-import db_connection
+from . import models
+from . import db_connection
 
 dotenv.load_dotenv()
 
@@ -19,5 +19,5 @@ models.Base.metadata.create_all(bind=db_connection.engine )
 
         
 if __name__=="__main__":
-    uvicorn.run("app:app", port=port, host=host)
+    uvicorn.run("backend_api.app:app", port=port, host=host)
  

@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime, Boolean
 import datetime
-from db_connection import Base
+from .db_connection import Base
 
 
 class CaseData(Base):

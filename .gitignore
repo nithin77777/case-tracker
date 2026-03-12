@@ -6,3 +6,4 @@ Dockerfile
 scriptgit.zsh
 evn
 *.db
+*.csv
