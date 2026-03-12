@@ -4,30 +4,20 @@ import os
 import dotenv
 import csv
 
+
+import models
+import db_connection
+
 dotenv.load_dotenv()
 
 port = int(os.getenv("PORT"))
 host = os.getenv("ALLOWED_HOSTS")
 app = fastapi.FastAPI()
 
-@app.get("/", status_code=200)
-def index():
-    return {
-        "status":"Success"
-    }
-
-def create_file():
-    i=1
-    with open("../data.csv", mode='w',newline='\n') as f:
-        writer = csv.writer(f,delimiter=',')
-        writer.writerow(["hello","world"])
-        # f.write("hello,world\n")
-        f.close()
-
-        
-    
+# Create the database tables
+models.Base.metadata.create_all(bind=db_connection.engine )
 
         
 if __name__=="__main__":
     uvicorn.run("app:app", port=port, host=host)
-    create_file()
+ 
